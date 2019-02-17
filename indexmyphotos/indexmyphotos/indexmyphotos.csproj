@@ -54,8 +54,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\ImageControl.xaml.cs">
+      <DependentUpon>ImageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewModel\ImageControlVM.cs" />
+    <Compile Include="IOLogic\Importer\ImageImporter.cs" />
+    <Compile Include="PathToImageConverter.cs" />
     <Compile Include="Tabs\Base\BaseTab.cs" />
+    <Compile Include="Tabs\ViewModel\MainTabControlVM.cs" />
+    <Compile Include="Tabs\MainTabControl.xaml.cs">
+      <DependentUpon>MainTabControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ViewModel\MainWindowVM.cs" />
+    <Page Include="Controls\ImageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\MainTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,7 +115,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tabs\ViewModel\" />
+    <Resource Include="SampleImages\2B-A1-82-02-BA-42-98-E2-63-5F-DC-A3-8D-0D-7F-BC-BB-CA-73-E6.jpg" />
+    <Resource Include="SampleImages\F0-B1-AF-79-E5-5C-29-5A-F4-26-58-D4-3E-0E-17-09-F4-AD-C3-0D.jpg" />
+    <Resource Include="SampleImages\F1-86-50-37-56-9E-E4-12-85-6C-96-F0-A8-B1-A7-97-DE-A7-FA-74.jpg" />
+    <Resource Include="SampleImages\F1-BB-A9-B9-78-F2-68-92-48-FC-56-49-41-33-3B-4C-A9-2E-D4-3B.jpg" />
+    <Resource Include="SampleImages\FC-CA-AB-26-1C-69-E5-1C-3F-C9-ED-AC-BB-BC-75-9F-66-EA-DA-AF.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

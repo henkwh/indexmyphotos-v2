@@ -1,0 +1,34 @@
+﻿<base:BaseTab x:Class="indexmyphotos.Tabs.MainTabControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:indexmyphotos.Tabs"
+             xmlns:base="clr-namespace:indexmyphotos.Tabs.Base"
+             xmlns:controls="clr-namespace:indexmyphotos.Controls"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=base:MainTabControlVM, IsDesignTimeCreatable=False}">
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto">
+            <ItemsControl
+                     ItemsSource="{Binding Items}" 
+                     Background="Aquamarine">
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="5">
+                            <controls:ImageControl Width="100" Height="100"></controls:ImageControl>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Stretch"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</base:BaseTab>
