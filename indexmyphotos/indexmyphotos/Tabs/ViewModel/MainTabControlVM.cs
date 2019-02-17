@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using indexmyphotos.Base;
 using indexmyphotos.Controls.ViewModel;
+using indexmyphotos.Converter;
 using indexmyphotos.IOLogic.Importer;
 
 namespace indexmyphotos.Tabs.Base

@@ -58,8 +58,9 @@
       <DependentUpon>ImageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ViewModel\ImageControlVM.cs" />
+    <Compile Include="Converter\SubstringToListConverter.cs.cs" />
     <Compile Include="IOLogic\Importer\ImageImporter.cs" />
-    <Compile Include="PathToImageConverter.cs" />
+    <Compile Include="Converter\SubstringToVisibilityConverter.cs" />
     <Compile Include="Tabs\Base\BaseTab.cs" />
     <Compile Include="Tabs\ViewModel\MainTabControlVM.cs" />
     <Compile Include="Tabs\MainTabControl.xaml.cs">

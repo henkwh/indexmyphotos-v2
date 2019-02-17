@@ -6,18 +6,32 @@
              xmlns:local="clr-namespace:indexmyphotos.Tabs"
              xmlns:base="clr-namespace:indexmyphotos.Tabs.Base"
              xmlns:controls="clr-namespace:indexmyphotos.Controls"
+             xmlns:converter="clr-namespace:indexmyphotos.Converter"
+             xmlns:base1="clr-namespace:indexmyphotos.Base"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=base:MainTabControlVM, IsDesignTimeCreatable=False}">
+    <base:BaseTab.Resources>
+        <ResourceDictionary>
+            <converter:SubstringToVisibilityConverter x:Key="SubstringToVisibilityConverter"></converter:SubstringToVisibilityConverter>
+        </ResourceDictionary>
+    </base:BaseTab.Resources>
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollBarVisibility="Auto">
             <ItemsControl
                      ItemsSource="{Binding Items}" 
-                     Background="Aquamarine">
+                     Background="Aquamarine"
+                     >
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="5">
+                            <Border.Visibility>
+                                <MultiBinding Converter="{StaticResource SubstringToVisibilityConverter}" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                    <Binding Path="(base1:BaseVM.SearchText)"></Binding>
+                                    <Binding Path="Tags"/>
+                                </MultiBinding>
+                            </Border.Visibility>
                             <controls:ImageControl Width="100" Height="100"></controls:ImageControl>
                         </Border>
                     </DataTemplate>
@@ -25,6 +39,7 @@
 
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
+                        <!-- Turn into VirtualizingStackPanel? />-->
                         <WrapPanel HorizontalAlignment="Stretch"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>

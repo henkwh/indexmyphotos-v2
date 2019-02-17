@@ -22,7 +22,7 @@ namespace indexmyphotos.IOLogic.Importer
             string mainpath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
                 @"..\..\"));
 
-            paths.Add(mainpath+"SampleImages");
+            paths.Add(mainpath + "SampleImages");
         }
 
         public List<string> GetFiles()
@@ -32,12 +32,11 @@ namespace indexmyphotos.IOLogic.Importer
             {
                 foreach (string file in Directory.EnumerateFiles(path, "*.jpg"))
                 {
-                    retValue.Add(file);
-                    retValue.Add(file);
-                    retValue.Add(file);
+                    for (int i = 0; i < 100; i++)
+                        retValue.Add(file);
                 }
             }
-
+ 
             return retValue;
         }
 
