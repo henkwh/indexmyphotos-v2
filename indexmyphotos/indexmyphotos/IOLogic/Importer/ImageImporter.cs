@@ -32,7 +32,7 @@ namespace indexmyphotos.IOLogic.Importer
             {
                 foreach (string file in Directory.EnumerateFiles(path, "*.jpg"))
                 {
-                    for (int i = 0; i < 100; i++)
+                    for (int i = 0; i < 500; i++)
                         retValue.Add(file);
                 }
             }

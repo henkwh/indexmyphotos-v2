@@ -24,11 +24,6 @@ namespace indexmyphotos.Tabs
         public MainTabControl()
         {
             InitializeComponent();
-
-            DataContext = new MainTabControlVM()
-            {
-
-            };
         }
     }
 }

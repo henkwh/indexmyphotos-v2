@@ -43,7 +43,7 @@ namespace indexmyphotos.Controls.ViewModel
             }
         }
 
-        /*private Visibility _visibility;
+        private Visibility _visibility;
         public Visibility Visibility
         {
             get { return _visibility; }
@@ -55,7 +55,7 @@ namespace indexmyphotos.Controls.ViewModel
                     OnPropertyChanged();
                 }
             }
-        }*/
+        }
 
         #endregion
 

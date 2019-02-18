@@ -4,12 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using indexmyphotos.Base;
 using indexmyphotos.Controls.ViewModel;
 using indexmyphotos.Converter;
 using indexmyphotos.IOLogic.Importer;
 
-namespace indexmyphotos.Tabs.Base
+namespace indexmyphotos.Tabs.ViewModel
 {
     public class MainTabControlVM : BaseVM
     {
@@ -27,17 +28,8 @@ namespace indexmyphotos.Tabs.Base
             }
         }
 
-
         public MainTabControlVM() : base()
         {
-            Items = new ObservableCollection<ImageControlVM>();
-
-            ImageImporter i = new ImageImporter();
-
-            foreach (string s in i.GetFiles())
-            {
-                Items.Add(new ImageControlVM(s));
-            }
         }
     }
 }

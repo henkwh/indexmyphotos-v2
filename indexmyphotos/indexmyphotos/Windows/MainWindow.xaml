@@ -17,14 +17,29 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBox Text="{Binding Path=(base:BaseVM.SearchText), Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        <TextBox Text="{Binding Path=SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  FontSize="16"
                  Margin="5"></TextBox>
         <TabControl Grid.Row="1">
             <TabItem Header="Main">
-                <tabs:MainTabControl></tabs:MainTabControl>
+                <tabs:MainTabControl DataContext="{Binding MainTabControlVM}"></tabs:MainTabControl>
             </TabItem>
         </TabControl>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    MinHeight="10">
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} / {1}">
+                        <Binding Path="VisibleItemCount" FallbackValue="0" />
+                        <Binding Path="Items.Count" FallbackValue="0"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
+
+        </StackPanel>
 
     </Grid>
 </Window>
